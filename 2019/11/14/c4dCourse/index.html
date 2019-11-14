@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>c4dCourse | Xingli&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="[TOC] 模型整理删掉所有不依附体和面的线，这些线导入c4d不能用作模型建立，而且会使对象面板混乱无比；为减轻c4d中清理对象列表的任务，将所以组中组都放到最外面一层；  c4d功能简介场景搭建常用功能：布尔、克隆、随机、修正、烘焙；c4d内新建模型常用功能：布尔、样条布尔、挤压、点/边/面层级右键模型进入的挤压/内部挤压/倒角等功能；体量生成常用功能：挤压、修正、布尔；挤压的对象是封闭样条线，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c4dCourse">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/c4dCourse/index.html">
+<meta property="og:site_name" content="Xingli&#39;s Blog">
+<meta property="og:description" content="[TOC] 模型整理删掉所有不依附体和面的线，这些线导入c4d不能用作模型建立，而且会使对象面板混乱无比；为减轻c4d中清理对象列表的任务，将所以组中组都放到最外面一层；  c4d功能简介场景搭建常用功能：布尔、克隆、随机、修正、烘焙；c4d内新建模型常用功能：布尔、样条布尔、挤压、点/边/面层级右键模型进入的挤压/内部挤压/倒角等功能；体量生成常用功能：挤压、修正、布尔；挤压的对象是封闭样条线，">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-14T04:54:24.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c4dCourse">
+<meta name="twitter:description" content="[TOC] 模型整理删掉所有不依附体和面的线，这些线导入c4d不能用作模型建立，而且会使对象面板混乱无比；为减轻c4d中清理对象列表的任务，将所以组中组都放到最外面一层；  c4d功能简介场景搭建常用功能：布尔、克隆、随机、修正、烘焙；c4d内新建模型常用功能：布尔、样条布尔、挤压、点/边/面层级右键模型进入的挤压/内部挤压/倒角等功能；体量生成常用功能：挤压、修正、布尔；挤压的对象是封闭样条线，">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Xingli</h5>
+          <a href="mailto:1054578664@qq.com" title="1054578664@qq.com" class="mail">1054578664@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://puyuanxizhu.github.io/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                待填写
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">c4dCourse</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">c4dCourse</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-14T04:52:09.000Z" itemprop="datePublished" class="page-time">
+  2019-11-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模型整理"><span class="post-toc-number">1.</span> <span class="post-toc-text">模型整理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#c4d功能简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">c4d功能简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动画部分"><span class="post-toc-number">3.</span> <span class="post-toc-text">动画部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-道路伸展"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.道路伸展</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-周边建筑体块升起"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.周边建筑体块升起</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-标签弹出"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.标签弹出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-红线伸展"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.红线伸展</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-树木随机排列"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5.树木随机排列</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-树木生长"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">6.树木生长</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-体块变形"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">7.体块变形</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-c4dCourse"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">c4dCourse</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-14 12:52:09" datetime="2019-11-14T04:52:09.000Z"  itemprop="datePublished">2019-11-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>[TOC]</p>
+<h3 id="模型整理"><a href="#模型整理" class="headerlink" title="模型整理"></a>模型整理</h3><p>删掉所有不依附体和面的线，这些线导入c4d不能用作模型建立，而且会使对象面板混乱无比；<br>为减轻c4d中清理对象列表的任务，将所以组中组都放到最外面一层；</p>
+<hr>
+<h3 id="c4d功能简介"><a href="#c4d功能简介" class="headerlink" title="c4d功能简介"></a>c4d功能简介</h3><p>场景搭建常用功能：布尔、克隆、随机、修正、烘焙；<br>c4d内新建模型常用功能：布尔、样条布尔、挤压、点/边/面层级右键模型进入的挤压/内部挤压/倒角等功能；<br>体量生成常用功能：挤压、修正、布尔；挤压的对象是封闭样条线，需要在c4d中绘制；修正的对象是可编辑多边形，快捷键c，su导入的物体就是可编辑多边形；布尔只要是封闭物体都可以使用，用作线性出现；</p>
+<hr>
+<h3 id="动画部分"><a href="#动画部分" class="headerlink" title="动画部分"></a>动画部分</h3><h4 id="1-道路伸展"><a href="#1-道路伸展" class="headerlink" title="1.道路伸展"></a>1.道路伸展</h4><p>思路：布尔减去上层，露出下层道路<br>① 按住ctrl向下拖动复制道路，与地块模型形成高差；分别命名为“Road_T”和“Road_B”；Road_B赋予马路深色材质，Road_T保持和地块儿同一种材质；<br>② 新建立方体，缩放到略宽与马路，放到地块以外道路的一端，c掉。接下来会用这个立方块作布尔的减去运算，减掉上面的浅色马路，露出下面的深色马路。<br>③ 在立方体<strong>下</strong>添加“修正”变形器，选中修正变形器，单向缩放，使立方体刚好盖住这条道路；查看修正变形器的属性栏，拖动强度滑块，就可以看到立方体伸长了，对强度打上关键帧；<br>④ 在立方体<strong>上</strong>添加一个“布尔”生成器，在立方体同一层级拖入Road_T，Road_T在上，得到了这条道路的生长动画；<br>其他道路同理，又用新的立方体减去上一步的布尔减去结果，最后结果如下：</p>
+<h4 id="2-周边建筑体块升起"><a href="#2-周边建筑体块升起" class="headerlink" title="2.周边建筑体块升起"></a>2.周边建筑体块升起</h4><p>对Y坐标添加关键帧，Y坐标增大出现在地平以上即可；</p>
+<h4 id="3-标签弹出"><a href="#3-标签弹出" class="headerlink" title="3.标签弹出"></a>3.标签弹出</h4><p>① 用基本的矩形和变形的四边形进行样条布尔来创建轮廓，不建议用样条曲线绘制，因为没法正交。</p>
+<p>同时选中两个形状，使用“样条-布尔命令-布尔并集”；<br>② 对布尔结果使用挤压，挤压合适厚度，赋予材质后这就是标签底板了；<br>③ 将标签底板的轴心移动到三角形端点，我们希望便签从这里缩放而出；<br>④ 对底板添加修正效果器，缩小到看不见，对修正效果器的强度打关键帧，使底板放大而出；</p>
+<p>⑤ 添加文字，使用“文本”生成器，对“基本-渲染器可见/编辑器可见”打上关键帧，保证标签底板放大到最大的一帧出现；<br>⑥ 标签消失同理；</p>
+<h4 id="4-红线伸展"><a href="#4-红线伸展" class="headerlink" title="4.红线伸展"></a>4.红线伸展</h4><p>① 在顶视图使用“样条画笔”工具，类型选择“线性”，绘制红线；新建圆环，新建“扫描”生成器，将圆环和红线拖到“扫描”下，圆环在上，如果没看到正确扫描结果，就更改圆环的平面方向，总有一个是对的。<br>② 选中圆环，快捷键T缩放，在空白处左右拖动使圆环缩放到合适大小；</p>
+<h4 id="5-树木随机排列"><a href="#5-树木随机排列" class="headerlink" title="5.树木随机排列"></a>5.树木随机排列</h4><p>① 正视图绘制圆环，c掉，沿Y轴缩放成椭圆形；继续绘制矩形，c掉，缩放并移动成树的样子：<br>② 同时选中矩形和圆环，使用“样条并集”，结果如下；</p>
+<p>③ 使用挤压，各方向厚度都为0，然后c掉，得到树平面；<br>④ 进入树的面层级，选中面右键使用线性切割，绘制树的内部形状，保证闭合就可，随便画，esc结束；<br>⑤ 创建树干、深色叶、浅色叶的材质，在面层级下选中各面，右键材质球选择“应用”，就可以将材质赋予给单个面而不是整个物体；</p>
+<p>⑥ 对树使用“克隆”，网格排列，调节X和Z方向的数量和尺寸。<br>⑦ 现在的排列太过整齐，需要加入随机；选中克隆，使用“运动对象-效果器-随机”；随机效果器需要调节的参数如下：</p>
+<p>效果如下：</p>
+<h4 id="6-树木生长"><a href="#6-树木生长" class="headerlink" title="6.树木生长"></a>6.树木生长</h4><p>上一步得到的仅仅是静止随机排列的树木，如果想要依次生长的树木，还需要这一步。<br>① 关掉克隆和随机，对树添加“修正”变形器，选中修正，将轴心移到底部，T缩放，把树缩放到看不见，对修正强度打关键帧，形成树木生长动画。<br>② “克隆”生成器不能克隆带变形器的物体，需要将树木生长动画变成点层级动画；选中树（一定要选），使用“窗口-时间线（摄影表）”，使用“功能-烘焙对象”，弹出窗口如下填选，起始/结束时间因人而异：</p>
+<p>烘焙结束就会给每一帧都打上关键帧，生成了一个新的树，现在可以删除修改器和原来带有修正修改器的那个树了，再把新的树拖到克隆下。</p>
+<p>③ 可以看到所有的树同一帧开始生长，同一帧结束，这不是我们想要的，我们想要的是部分树先生长，部分慢生长：</p>
+<p>随机效果器-参数-时间偏移，从0F改成生长动画一半的帧数；<br>发现0F时有树木已经长起来了，Shift+F3打开时间线窗口，将树生长动画往后拖，结果如下；</p>
+<h4 id="7-体块变形"><a href="#7-体块变形" class="headerlink" title="7.体块变形"></a>7.体块变形</h4><p>建议直接导入su的体块模型，下面介绍几种常用的变形方法：<br>① 线性出现：对立方体建立单向缩放动画，用这个变形的立方体减去模型构件；</p>
+<p>② 体块生成<br>保证需要变形的部分有足够的网格线，比如方块边坡屋顶，就得保证顶面中心屋脊的位置有条网格线；<br>使用“修正”变形器，将屋脊拉起，然后对修正强度打关键帧，完成；</p>
+<p>③ 简单体块向复杂模型过渡<br>思路：用同一个变化的立方体对简单体块儿作交集，对复杂模型作差集；</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-14T04:54:24.740Z" itemprop="dateUpdated">2019-11-14 12:54:24</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/11/14/c4dCourse/" target="_blank" rel="external">http://yoursite.com/2019/11/14/c4dCourse/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Xingli">
+            Xingli
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/14/c4dCourse/&title=《c4dCourse》 — Xingli's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/14/c4dCourse/&title=《c4dCourse》 — Xingli's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/14/c4dCourse/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《c4dCourse》 — Xingli's Blog&url=http://yoursite.com/2019/11/14/c4dCourse/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/14/c4dCourse/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/28/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Xingli &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/14/c4dCourse/&title=《c4dCourse》 — Xingli's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/14/c4dCourse/&title=《c4dCourse》 — Xingli's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/14/c4dCourse/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《c4dCourse》 — Xingli's Blog&url=http://yoursite.com/2019/11/14/c4dCourse/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/14/c4dCourse/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/14/c4dCourse/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
