@@ -30,10 +30,18 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/11/14/UpibA1Bzmc5o2xF.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/14/XB48te6nNvcqYAW.gif">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/yiPmWdQueMxZsg7.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/FIC7PKXQqMznjTJ.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/14/rhAjTynOFlbaIuQ.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/WdYPSAhc3KpgLa2.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/3nJLUZy76FBDNk8.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/14/942Eso3AxlaZLMz.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/R7FtoVHiNmBzZ58.gif">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/nFPai5SW9KHkL2p.gif">
 <meta property="og:image" content="https://i.loli.net/2019/11/14/aZ6CNJUPFguAiHV.gif">
-<meta property="og:updated_time" content="2019-11-14T05:05:24.747Z">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/hxkWUD5AgSELli6.gif">
+<meta property="og:image" content="https://i.loli.net/2019/11/14/GhasfSvB5TlkAKC.gif">
+<meta property="og:updated_time" content="2019-11-14T05:21:36.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c4dCourse">
 <meta name="twitter:description" content="[TOC] 模型整理删掉所有不依附体和面的线，这些线导入c4d不能用作模型建立，而且会使对象面板混乱无比；为减轻c4d中清理对象列表的任务，将所以组中组都放到最外面一层；  c4d功能简介场景搭建常用功能：布尔、克隆、随机、修正、烘焙；c4d内新建模型常用功能：布尔、样条布尔、挤压、点/边/面层级右键模型进入的挤压/内部挤压/倒角等功能；体量生成常用功能：挤压、修正、布尔；挤压的对象是封闭样条线，">
@@ -225,7 +233,21 @@
 <p>⑤ 添加文字，使用“文本”生成器，对“基本-渲染器可见/编辑器可见”打上关键帧，保证标签底板放大到最大的一帧出现；<br>⑥ 标签消失同理；</p>
 <h4 id="4-红线伸展"><a href="#4-红线伸展" class="headerlink" title="4.红线伸展"></a>4.红线伸展</h4><p>① 在顶视图使用“样条画笔”工具，类型选择“线性”，绘制红线；新建圆环，新建“扫描”生成器，将圆环和红线拖到“扫描”下，圆环在上，如果没看到正确扫描结果，就更改圆环的平面方向，总有一个是对的。<br>② 选中圆环，快捷键T缩放，在空白处左右拖动使圆环缩放到合适大小；</p>
 <h4 id="5-树木随机排列"><a href="#5-树木随机排列" class="headerlink" title="5.树木随机排列"></a>5.树木随机排列</h4><p>① 正视图绘制圆环，c掉，沿Y轴缩放成椭圆形；继续绘制矩形，c掉，缩放并移动成树的样子：<br>② 同时选中矩形和圆环，使用“样条并集”，结果如下；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/yiPmWdQueMxZsg7.png" alt="Image _4_.png" title>
+                </div>
+                <div class="image-caption">Image _4_.png</div>
+            </figure>
 <p>③ 使用挤压，各方向厚度都为0，然后c掉，得到树平面；<br>④ 进入树的面层级，选中面右键使用线性切割，绘制树的内部形状，保证闭合就可，随便画，esc结束；<br>⑤ 创建树干、深色叶、浅色叶的材质，在面层级下选中各面，右键材质球选择“应用”，就可以将材质赋予给单个面而不是整个物体；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/FIC7PKXQqMznjTJ.png" alt="Image _4_.png" title>
+                </div>
+                <div class="image-caption">Image _4_.png</div>
+            </figure>
 <p>⑥ 对树使用“克隆”，网格排列，调节X和Z方向的数量和尺寸。<br>⑦ 现在的排列太过整齐，需要加入随机；选中克隆，使用“运动对象-效果器-随机”；随机效果器需要调节的参数如下：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -235,7 +257,21 @@
                 <div class="image-caption">Image _4_.png</div>
             </figure>
 <p>效果如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/WdYPSAhc3KpgLa2.png" alt="Image _4_.png" title>
+                </div>
+                <div class="image-caption">Image _4_.png</div>
+            </figure>
 <h4 id="6-树木生长"><a href="#6-树木生长" class="headerlink" title="6.树木生长"></a>6.树木生长</h4><p>上一步得到的仅仅是静止随机排列的树木，如果想要依次生长的树木，还需要这一步。<br>① 关掉克隆和随机，对树添加“修正”变形器，选中修正，将轴心移到底部，T缩放，把树缩放到看不见，对修正强度打关键帧，形成树木生长动画。<br>② “克隆”生成器不能克隆带变形器的物体，需要将树木生长动画变成点层级动画；选中树（一定要选），使用“窗口-时间线（摄影表）”，使用“功能-烘焙对象”，弹出窗口如下填选，起始/结束时间因人而异：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/3nJLUZy76FBDNk8.png" alt="Image _4_.png" title>
+                </div>
+                <div class="image-caption">Image _4_.png</div>
+            </figure>
 <p>烘焙结束就会给每一帧都打上关键帧，生成了一个新的树，现在可以删除修改器和原来带有修正修改器的那个树了，再把新的树拖到克隆下。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -245,7 +281,21 @@
                 <div class="image-caption">Image _7_.png</div>
             </figure>
 <p>③ 可以看到所有的树同一帧开始生长，同一帧结束，这不是我们想要的，我们想要的是部分树先生长，部分慢生长：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/R7FtoVHiNmBzZ58.gif" alt="20191114_111016.mp4.gif" title>
+                </div>
+                <div class="image-caption">20191114_111016.mp4.gif</div>
+            </figure>
 <p>随机效果器-参数-时间偏移，从0F改成生长动画一半的帧数；<br>发现0F时有树木已经长起来了，Shift+F3打开时间线窗口，将树生长动画往后拖，结果如下；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/nFPai5SW9KHkL2p.gif" alt="20191114_103737.mp4~1.gif" title>
+                </div>
+                <div class="image-caption">20191114_103737.mp4~1.gif</div>
+            </figure>
 <h4 id="7-体块变形"><a href="#7-体块变形" class="headerlink" title="7.体块变形"></a>7.体块变形</h4><p>建议直接导入su的体块模型，下面介绍几种常用的变形方法：<br>① 线性出现：对立方体建立单向缩放动画，用这个变形的立方体减去模型构件；</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -255,7 +305,24 @@
                 <div class="image-caption">20191114_111016.mp4.gif</div>
             </figure>
 <p>② 体块生成<br>保证需要变形的部分有足够的网格线，比如方块边坡屋顶，就得保证顶面中心屋脊的位置有条网格线；<br>使用“修正”变形器，将屋脊拉起，然后对修正强度打关键帧，完成；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/hxkWUD5AgSELli6.gif" alt="adgfdag.mp4.gif" title>
+                </div>
+                <div class="image-caption">adgfdag.mp4.gif</div>
+            </figure>
 <p>③ 简单体块向复杂模型过渡<br>思路：用同一个变化的立方体对简单体块儿作交集，对复杂模型作差集；</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/14/GhasfSvB5TlkAKC.gif" alt="20191114_115047.mp4~1.gif" title>
+                </div>
+                <div class="image-caption">20191114_115047.mp4~1.gif</div>
+            </figure>
+
+
+
 
         </div>
 
@@ -264,7 +331,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-11-14T05:05:24.747Z" itemprop="dateUpdated">2019-11-14 13:05:24</time>
+    Last updated: <time datetime="2019-11-14T05:21:36.306Z" itemprop="dateUpdated">2019-11-14 13:21:36</time>
 </span><br>
 
 
